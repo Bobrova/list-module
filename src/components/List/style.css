@@ -1,0 +1,31 @@
+.list {
+  padding: 10px;
+}
+
+.listMusic {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listItem {
+  width: 250px;
+  height: 80px;
+  margin: 10px 10px 10px 10px;
+  border: 1px solid #e5b567;
+  color: #514f4f;
+}
+
+.listItem__name {
+  width: 100%;
+  text-align: left;
+  padding: 5px 5px 5px 10px;
+  box-sizing: border-box;
+}
+
+.list_nameSong {
+  padding: 5px;
+}
+
+.list_nameSinger {
+  padding: 5px;
+}

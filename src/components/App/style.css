@@ -1,3 +1,12 @@
-.intro {
-  background-color: yellow;
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  width: 100%;
+  min-width: 320px;
+  max-width: 1900px;
 }

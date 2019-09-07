@@ -35,6 +35,16 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.(sass|scss)$/,
+        use: [{
+            loader: "style-loader"
+        }, {
+            loader: "css-loader"
+        }, {
+            loader: "sass-loader"
+        }]
+      },
     ]
   }
 };
