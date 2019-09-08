@@ -16,7 +16,10 @@ export default function reducer(state = initialState, action) {
         },
       };
       case DEL_ITEM:
-        return state.list.filter(item => item.id !== action.id);
+        return {
+          ...state,
+        list: state.list.filter(item => item.id !== action.id),
+      };
       case SET_SONG:
       return {
         ...state,

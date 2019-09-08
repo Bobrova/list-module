@@ -29,3 +29,15 @@
 .list_nameSinger {
   padding: 5px;
 }
+
+.btnDel {
+  text-decoration: underline;
+  color: #514f4f;
+  text-align: center;
+}
+
+
+.btnDel:hover {
+  cursor: pointer;
+  
+}
