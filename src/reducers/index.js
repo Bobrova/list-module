@@ -1,4 +1,4 @@
-import { ADD_ITEM, SET_SONG, SET_SINGER, DEL_ITEM } from '../constants/ActionTypes';
+import { ADD_ITEM, SET_SONG, SET_SINGER, DEL_ITEM, SET_SEARCH } from '../constants/ActionTypes';
 import { initialState } from '../store/initialState';
 
 export default function reducer(state = initialState, action) {
@@ -35,6 +35,11 @@ export default function reducer(state = initialState, action) {
           ...state.formValue,
           singer:action.singer,
         },
+      };
+      case SET_SEARCH:
+      return {
+        ...state,
+        searchValue: action.text
       };
     default:
       return state;

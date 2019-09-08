@@ -1,27 +1,30 @@
-import React, { Component } from "react";
-import styles from "./style.css";
-import FormsContainer from "../../containers/FormsContainer";
+import React, { Component } from 'react';
+import styles from './style.css';
 
 class Forms extends Component {
-
   handleSongChange = (e) => {
     const { actions } = this.props;
     const { setSong } = actions;
-    const text = e.target.value.trim();
+    // const text = e.target.value.trim();
+    const text = e.target.value;
     setSong(text);
   }
 
   handleSingerChange = (e) => {
     const { actions } = this.props;
     const { setSinger } = actions;
-    const text = e.target.value.trim();
+    const text = e.target.value;
     setSinger(text);
   }
 
   handleClick = () => {
     const { currentId, song, singer, actions } = this.props;
     const { addItem } = actions;
-    addItem({id: currentId + 1, Song: song, Singer: singer});
+    if (song !== '' && /\S/.test(song)) {
+      if (singer !== '' && /\S/.test(singer)) {
+        addItem({ id: currentId + 1, Song: song.trim(), Singer: singer.trim() });
+      }
+    }
   }
 
   render() {
@@ -37,10 +40,10 @@ class Forms extends Component {
             <label htmlFor="singer">Имя исполнителя</label>
             <input className={styles.singerInput} type="text" id="singer" placeholder="Исполнитель" onChange={this.handleSingerChange} value={singer} />
           </div>
-          <div className={styles.btnAdd} onClick={this.handleClick} >Добавить</div>
+          <div className={styles.btnAdd} onClick={this.handleClick}>Добавить</div>
         </form>
       </section>
-      );
+    );
   }
 }
 export default Forms;

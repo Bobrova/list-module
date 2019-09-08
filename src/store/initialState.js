@@ -83,4 +83,5 @@ export const initialState = getFromStorage() || {
     song: '',
     singer: '',
   },
+  searchValue: '',
 };
