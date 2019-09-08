@@ -2,9 +2,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../actions';
 import Forms from '../components/Forms';
+import { getCurrentId } from '../selectors';
 
 const mapStateToProps = state => ({
-  List: state.list,
+  list: state.list,
+  song: state.formValue.song, 
+  singer: state.formValue.singer,
+  currentId: getCurrentId(state),
 });
 
 const mapDispatchToProps = dispatch => ({

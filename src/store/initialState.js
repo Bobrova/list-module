@@ -9,16 +9,78 @@ const getFromStorage = () => {
 export const initialState = getFromStorage() || {
   list: [
     {
-      nameSong: 'name',
-      nameSinger: 'srhsryt',
+      id: 1,
+      Song: 'name',
+      Singer: 'srhsryt',
     },
     {
-      nameSong: 'name',
-      nameSinger: 'rsthrthrts',
+      id: 2,
+      Song: 'name',
+      Singer: 'rsthrthrts',
     },
     {
-      nameSong: 'name',
-      nameSinger: 'fhtsrthrs',
+      id: 3,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 4,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 5,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 6,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 7,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 8,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 9,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 10,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 11,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 12,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 13,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
+    },
+    {
+      id: 14,
+      Song: 'name',
+      Singer: 'fhtsrthrs',
     },
   ],
+  formValue: {
+    song: '',
+    singer: '',
+  },
 };
