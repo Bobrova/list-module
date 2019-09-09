@@ -36,8 +36,33 @@
   text-align: center;
 }
 
-
 .btnDel:hover {
   cursor: pointer;
-  
+}
+
+.btnEdit {
+  text-decoration: underline;
+  color: #514f4f;
+  text-align: center;
+}
+
+.btnEdit:hover {
+  cursor: pointer;
+}
+
+.textEditing {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.btnSave {
+  text-decoration: underline;
+  color: #514f4f;
+  text-align: center;
+}
+
+.btnSave:hover {
+  cursor: pointer;
 }

@@ -6,6 +6,7 @@ import { getVisibleList} from '../selectors';
 
 const mapStateToProps = state => ({
   list: getVisibleList(state),
+  idEdit: state.idEdit,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,4 +1,4 @@
-import { ADD_ITEM, SET_SONG, SET_SINGER, DEL_ITEM, SET_SEARCH } from '../constants/ActionTypes';
+import { ADD_ITEM, SET_SONG, SET_SINGER, DEL_ITEM, SET_SEARCH, EDIT_ITEM, SET_SINGER_EDIT, SET_SONG_EDIT } from '../constants/ActionTypes';
 import { initialState } from '../store/initialState';
 
 export default function reducer(state = initialState, action) {
@@ -40,6 +40,37 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         searchValue: action.text
+      };
+      case EDIT_ITEM:
+      return {
+        ...state,
+        idEdit: action.idEdit,
+      };
+      case SET_SINGER_EDIT:
+      return {
+        ...state,
+        list: 
+          state.list.map(item => 
+            item.id === state.idEdit ? 
+            {
+              ...item,
+              Singer: action.singer,
+            } : 
+            item
+          )
+      };
+      case SET_SONG_EDIT:
+      return {
+        ...state,
+        list: 
+          state.list.map(item => 
+            item.id === state.idEdit ? 
+            {
+              ...item,
+              Song: action.song,
+            } :
+            item
+          )
       };
     default:
       return state;
