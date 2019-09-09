@@ -30,21 +30,28 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true
-            }
-          }
+              importLoaders: 1,
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+          },
         ]
       },
       {
-        test: /\.(sass|scss)$/,
-        use: [{
-            loader: "style-loader"
-        }, {
-            loader: "css-loader"
-        }, {
-            loader: "sass-loader"
-        }]
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+          },
+          "sass-loader",
+        ]
       },
     ]
-  }
+  },
 };

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./style.css";
+import styles from "./style.scss";
 import FormsContainer from "../../containers/FormsContainer"
 import SearchContainer from "../../containers/SearchContainer"
 import ListContainer from "../../containers/ListContainer"

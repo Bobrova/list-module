@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import styles from './style.css';
+import PropTypes from 'prop-types';
+import styles from './style.scss';
 
 class Forms extends Component {
   handleSongChange = (e) => {
     const { actions } = this.props;
     const { setSong } = actions;
-    // const text = e.target.value.trim();
     const text = e.target.value;
     setSong(text);
   }
@@ -46,4 +46,12 @@ class Forms extends Component {
     );
   }
 }
+
+Forms.propTypes = {
+  currentId: PropTypes.number.isRequired,
+  song: PropTypes.string.isRequired,
+  singer: PropTypes.string.isRequired,
+  actions: PropTypes.object.isRequired,
+};
+
 export default Forms;

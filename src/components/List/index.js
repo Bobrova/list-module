@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import styles from "./style.css";
+import PropTypes from 'prop-types';
+import styles from "./style.scss";
 
 class List extends Component {
 
@@ -25,4 +26,10 @@ class List extends Component {
       );
   }
 }
+
+List.propTypes = {
+  list: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired,
+};
+
 export default List;

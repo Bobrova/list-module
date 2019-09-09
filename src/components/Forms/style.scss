@@ -28,9 +28,8 @@
   color: #fff;
   font-family: "Arial";
   margin: 10px;
-}
-
-.btnAdd:hover {
-  cursor: pointer;
-  background-color: #eab462;
+  &:hover {
+    cursor: pointer;
+    background-color: #eab462;
+  }
 }
