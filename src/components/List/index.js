@@ -37,14 +37,12 @@ class List extends Component {
               className={styles.textEditing}
               value={item.Song}
               onChange={this.handleSongChange}
-              onBlur={this.handleBlur}
             />
             <input
               type="text"
               className={styles.textEditing}
               value={item.Singer}
               onChange={this.handleSingerChange}
-              onBlur={this.handleBlur}
             />
             <div
               className={styles.btnSave}
