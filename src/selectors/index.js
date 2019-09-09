@@ -12,7 +12,11 @@ export const getCurrentId = createSelector(
 
 export const getVisibleList = createSelector(
   [getSearchValue, getlist],
-  (text='', list) => {
-    return list.filter(item => item.Song.includes(text) || item.Singer.includes(text))
-  },
+  (text = "", list) => {
+    return list.filter(
+      item =>
+        item.Song.toUpperCase().includes(text.toUpperCase()) ||
+        item.Singer.toUpperCase().includes(text.toUpperCase())
+    );
+  }
 );

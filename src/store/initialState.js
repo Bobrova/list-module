@@ -1,13 +1,13 @@
 const getFromStorage = () => {
-  const data = localStorage.getItem('filling-form-3d');
+  const data = localStorage.getItem('list-module-3d');
   if (data) {
     return JSON.parse(data);
   }
   return false;
 };
 
-export const initialState = getFromStorage() || {
-  list: [
+export const initialState = {
+   list: getFromStorage() || [
     {
       id: 1,
       Song: 'name',
