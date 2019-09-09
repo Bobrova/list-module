@@ -6,7 +6,7 @@ import { getCurrentId } from '../selectors';
 
 const mapStateToProps = state => ({
   list: state.list,
-  song: state.formValue.song, 
+  song: state.formValue.song,
   singer: state.formValue.singer,
   currentId: getCurrentId(state),
 });

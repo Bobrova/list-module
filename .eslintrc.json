@@ -30,6 +30,10 @@
       "react/jsx-filename-extension": "off",
       "arrow-parens": "off",
       "import/prefer-default-export": "off",
-      "arrow-body-style": "off"
+      "arrow-body-style": "off",
+      "jsx-a11y/accessible-emoji": "off",
+      "react/prefer-stateless-function": "off",
+      "import/no-cycle": "off",
+      "no-confusing-arrow": "off"
     }
 }

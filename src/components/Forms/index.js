@@ -42,22 +42,18 @@ class Forms extends Component {
       <section className={styles.dataInput}>
         <form>
           <div className={styles.nameSong}>
-            <label htmlFor="song">Название песни</label>
             <input
               className={styles.songInput}
               type="text"
-              id="song"
               placeholder="Песня"
               onChange={this.handleSongChange}
               value={song}
             />
           </div>
           <div className={styles.nameSinger}>
-            <label htmlFor="singer">Имя исполнителя</label>
             <input
               className={styles.singerInput}
               type="text"
-              id="singer"
               placeholder="Исполнитель"
               onChange={this.handleSingerChange}
               value={singer}

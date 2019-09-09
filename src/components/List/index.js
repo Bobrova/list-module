@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './style.scss';
 
 class List extends Component {
-  // handleBlur = () => {
-  //   const { actions } = this.props;
-  //   actions.editItem(0);
-  // }
-
   handleSongChange = e => {
     const { actions } = this.props;
     const { setSongEdit } = actions;
@@ -21,6 +16,15 @@ class List extends Component {
     const text = e.target.value;
     setSingerEdit(text);
   };
+
+  handleClickSave = () => {
+    const { actions, list, idEdit } = this.props;
+    const [el] = list.filter(item => item.id === idEdit);
+    if (el.Song === '' && el.Singer === '') {
+      actions.delItem(idEdit);
+    }
+    actions.editItem(0);
+  }
 
   render() {
     const { list, actions, idEdit } = this.props;
@@ -44,11 +48,9 @@ class List extends Component {
             />
             <div
               className={styles.btnSave}
-              onClick={() => {
-                actions.editItem(0);
-              }}
+              onClick={this.handleClickSave}
             >
-              Сохранить
+              &#128190;
             </div>
           </div>
         ) : (
@@ -61,7 +63,7 @@ class List extends Component {
                 actions.delItem(item.id);
               }}
             >
-              Удалить
+              &#x2718;
             </div>
             <div
               className={styles.btnEdit}
@@ -69,7 +71,7 @@ class List extends Component {
                 actions.editItem(item.id);
               }}
             >
-              Редактировать
+              &#x270e;
             </div>
           </div>
         )}

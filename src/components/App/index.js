@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styles from "./style.scss";
-import FormsContainer from "../../containers/FormsContainer"
-import SearchContainer from "../../containers/SearchContainer"
-import ListContainer from "../../containers/ListContainer"
+import React, { Component } from 'react';
+import styles from './style.scss';
+import FormsContainer from '../../containers/FormsContainer';
+import SearchContainer from '../../containers/SearchContainer';
+import ListContainer from '../../containers/ListContainer';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
         <SearchContainer />
         <ListContainer />
       </section>
-      );
+    );
   }
 }
 export default App;

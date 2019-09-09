@@ -1,21 +1,27 @@
 .dataInput {
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 .nameSong {
-  margin: 10px;
+  padding: 10px;
 }
 
 .nameSinger {
-  margin: 10px;
+  padding: 10px;
 }
 
 .songInput {
-  margin-left: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #2d2d2d;
+  font-size: 1em;
 }
 
 .singerInput {
-  margin-left: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #2d2d2d;
+  font-size: 1em;
 }
 
 .btnAdd {
@@ -26,8 +32,9 @@
   line-height: 30px;
   background-color: #d19c47;
   color: #fff;
-  font-family: "Arial";
+  font-family: Arial, sans-serif;
   margin: 10px;
+
   &:hover {
     cursor: pointer;
     background-color: #eab462;

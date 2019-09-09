@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../actions';
 import List from '../components/List';
-import { getVisibleList} from '../selectors';
+import { getVisibleList } from '../selectors';
 
 const mapStateToProps = state => ({
   list: getVisibleList(state),

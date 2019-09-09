@@ -7,76 +7,36 @@ const getFromStorage = () => {
 };
 
 export const initialState = {
-   list: getFromStorage() || [
+  list: getFromStorage() || [
     {
       id: 1,
-      Song: 'name',
-      Singer: 'srhsryt',
+      Song: 'Brainstorm',
+      Singer: 'Arctic Monkeys',
     },
     {
       id: 2,
-      Song: 'name',
-      Singer: 'rsthrthrts',
+      Song: 'The Golden Age',
+      Singer: 'The Asteroids Galaxy Tour',
     },
     {
       id: 3,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
+      Song: 'Octopus',
+      Singer: 'The Barons Of Tang',
     },
     {
       id: 4,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
+      Song: 'It is bigger on the inside',
+      Singer: 'Voltaire',
     },
     {
       id: 5,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
+      Song: 'The Greatest Show Unearthed',
+      Singer: 'Creature Feature',
     },
     {
       id: 6,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 7,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 8,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 9,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 10,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 11,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 12,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 13,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
-    },
-    {
-      id: 14,
-      Song: 'name',
-      Singer: 'fhtsrthrs',
+      Song: 'Perfect World',
+      Singer: 'Billy Talent',
     },
   ],
   formValue: {
