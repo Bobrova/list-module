@@ -41,18 +41,18 @@ class Forms extends Component {
     return (
       <section className={styles.dataInput}>
         <form>
-          <div className={styles.nameSong}>
+          <div className={styles.formItem}>
             <input
-              className={styles.songInput}
+              className={styles.formInput}
               type="text"
               placeholder="Песня"
               onChange={this.handleSongChange}
               value={song}
             />
           </div>
-          <div className={styles.nameSinger}>
+          <div className={styles.formItem}>
             <input
-              className={styles.singerInput}
+              className={styles.formInput}
               type="text"
               placeholder="Исполнитель"
               onChange={this.handleSingerChange}

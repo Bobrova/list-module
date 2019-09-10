@@ -15,7 +15,7 @@ $color-text: #514f4f;
 
 .listItem {
   width: 17em;
-  margin: 10px 10px 10px 10px;
+  margin: 10px;
   border: 1px solid #e5b567;
   font-size: 1em;
   color: $color-text;
@@ -59,8 +59,8 @@ $color-text: #514f4f;
 }
 
 .btnEdit {
-  width: 28px;
-  height: 28px;
+  width: 1.15em;
+  height: 1.15em;
   position: absolute;
   top: 0;
   right: 0;
