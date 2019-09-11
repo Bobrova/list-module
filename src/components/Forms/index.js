@@ -29,8 +29,8 @@ class Forms extends Component {
       if (singer !== '' && /\S/.test(singer)) {
         addItem({
           id: currentId + 1,
-          Song: song.trim(),
-          Singer: singer.trim(),
+          song: song.trim(),
+          singer: singer.trim(),
         });
       }
     }

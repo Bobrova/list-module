@@ -69,7 +69,7 @@ export default function reducer(state = initialState, action) {
           state.list.map(item => (item.id === state.idEdit
             ? {
               ...item,
-              Singer: action.singer,
+              singer: action.singer,
             }
             : item
           )),
@@ -80,7 +80,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         list:
           state.list.map(item => item.id === state.idEdit
-            ? { ...item, Song: action.song }
+            ? { ...item, song: action.song }
             : item),
       };
     default:

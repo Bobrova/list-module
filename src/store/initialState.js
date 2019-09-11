@@ -10,33 +10,33 @@ export const initialState = {
   list: getFromStorage() || [
     {
       id: 1,
-      Song: 'Brainstorm',
-      Singer: 'Arctic Monkeys',
+      song: 'Brainstorm',
+      singer: 'Arctic Monkeys',
     },
     {
       id: 2,
-      Song: 'The Golden Age',
-      Singer: 'The Asteroids Galaxy Tour',
+      song: 'The Golden Age',
+      singer: 'The Asteroids Galaxy Tour',
     },
     {
       id: 3,
-      Song: 'Octopus',
-      Singer: 'The Barons Of Tang',
+      song: 'Octopus',
+      singer: 'The Barons Of Tang',
     },
     {
       id: 4,
-      Song: 'It is bigger on the inside',
-      Singer: 'Voltaire',
+      song: 'It is bigger on the inside',
+      singer: 'Voltaire',
     },
     {
       id: 5,
-      Song: 'The Greatest Show Unearthed',
-      Singer: 'Creature Feature',
+      song: 'The Greatest Show Unearthed',
+      singer: 'Creature Feature',
     },
     {
       id: 6,
-      Song: 'Perfect World',
-      Singer: 'Billy Talent',
+      song: 'Perfect World',
+      singer: 'Billy Talent',
     },
   ],
   formValue: {

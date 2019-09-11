@@ -14,8 +14,8 @@ export const getVisibleList = createSelector(
   [getSearchValue, getlist],
   (text = '', list) => {
     return list.filter(
-      item => item.Song.toUpperCase().includes(text.toUpperCase())
-        || item.Singer.toUpperCase().includes(text.toUpperCase()),
+      item => item.song.toUpperCase().includes(text.toUpperCase())
+        || item.singer.toUpperCase().includes(text.toUpperCase()),
     );
   },
 );

@@ -20,7 +20,7 @@ class List extends Component {
   handleClickSave = () => {
     const { actions, list, idEdit } = this.props;
     const [el] = list.filter(item => item.id === idEdit);
-    if (el.Song === '' && el.Singer === '') {
+    if (el.song === '' && el.singer === '') {
       actions.delItem(idEdit);
     }
     actions.editItem(0);
@@ -35,13 +35,13 @@ class List extends Component {
             <input
               type="text"
               className={styles.textEditing}
-              value={item.Song}
+              value={item.song}
               onChange={this.handleSongChange}
             />
             <input
               type="text"
               className={styles.textEditing}
-              value={item.Singer}
+              value={item.singer}
               onChange={this.handleSingerChange}
             />
             <div
@@ -53,8 +53,8 @@ class List extends Component {
           </div>
         ) : (
           <div className={styles.listItem__name}>
-            <p className={styles.list_nameSong}>{item.Song}</p>
-            <p className={styles.list_nameSinger}>{item.Singer}</p>
+            <p className={styles.list_nameSong}>{item.song}</p>
+            <p className={styles.list_nameSinger}>{item.singer}</p>
             <div
               className={styles.btnDel}
               onClick={() => {
