@@ -4,8 +4,7 @@ import styles from './style.scss';
 
 class Search extends Component {
   handleSearch = (e) => {
-    const { actions } = this.props;
-    const { setSearch } = actions;
+    const { setSearch } = this.props;
     const text = e.target.value.trim();
     setSearch(text);
   }
@@ -21,7 +20,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  actions: PropTypes.object.isRequired,
+  setSearch: PropTypes.func.isRequired,
 };
 
 export default Search;

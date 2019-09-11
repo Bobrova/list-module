@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as Actions from '../actions';
+import {
+  setSong,
+  setSinger,
+  addItem,
+} from '../actions';
 import Forms from '../components/Forms';
 import { getCurrentId } from '../selectors';
 
@@ -11,11 +14,11 @@ const mapStateToProps = state => ({
   currentId: getCurrentId(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(Actions, dispatch),
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  {
+    setSong,
+    setSinger,
+    addItem,
+  },
 )(Forms);

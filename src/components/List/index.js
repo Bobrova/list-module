@@ -5,16 +5,23 @@ import styles from './style.scss';
 
 class List extends Component {
   render() {
-    const { list, actions, idEdit } = this.props;
+    const {
+      list,
+      setSingerEdit,
+      setSongEdit,
+      editItem,
+      delItem,
+      idEdit,
+    } = this.props;
     const listItem = list.map(item => (
       <ItemList
         key={item.id}
         idEdit={idEdit}
         itemList={item}
-        setSongEdit={actions.setSongEdit}
-        setSingerEdit={actions.setSingerEdit}
-        delItem={actions.delItem}
-        editItem={actions.editItem}
+        setSongEdit={setSongEdit}
+        setSingerEdit={setSingerEdit}
+        delItem={delItem}
+        editItem={editItem}
       />
     ));
 
@@ -27,9 +34,12 @@ class List extends Component {
 }
 
 List.propTypes = {
-  list: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
   idEdit: PropTypes.number.isRequired,
+  list: PropTypes.array.isRequired,
+  setSingerEdit: PropTypes.func.isRequired,
+  setSongEdit: PropTypes.func.isRequired,
+  editItem: PropTypes.func.isRequired,
+  delItem: PropTypes.func.isRequired,
 };
 
 export default List;

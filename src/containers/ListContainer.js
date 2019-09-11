@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as Actions from '../actions';
+import {
+  setSongEdit,
+  setSingerEdit,
+  delItem,
+  editItem,
+} from '../actions';
 import List from '../components/List';
 import { getVisibleList } from '../selectors';
 
@@ -9,11 +13,12 @@ const mapStateToProps = state => ({
   idEdit: state.idEdit,
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(Actions, dispatch),
-});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  {
+    setSongEdit,
+    setSingerEdit,
+    editItem,
+    delItem,
+  },
 )(List);

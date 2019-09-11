@@ -4,15 +4,13 @@ import styles from './style.scss';
 
 class Forms extends Component {
   handleSongChange = e => {
-    const { actions } = this.props;
-    const { setSong } = actions;
+    const { setSong } = this.props;
     const text = e.target.value;
     setSong(text);
   };
 
   handleSingerChange = e => {
-    const { actions } = this.props;
-    const { setSinger } = actions;
+    const { setSinger } = this.props;
     const text = e.target.value;
     setSinger(text);
   };
@@ -22,9 +20,8 @@ class Forms extends Component {
       currentId,
       song,
       singer,
-      actions,
+      addItem,
     } = this.props;
-    const { addItem } = actions;
     if (song !== '' && /\S/.test(song)) {
       if (singer !== '' && /\S/.test(singer)) {
         addItem({
@@ -72,7 +69,9 @@ Forms.propTypes = {
   currentId: PropTypes.number.isRequired,
   song: PropTypes.string.isRequired,
   singer: PropTypes.string.isRequired,
-  actions: PropTypes.object.isRequired,
+  setSong: PropTypes.func.isRequired,
+  setSinger: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
 };
 
 export default Forms;
