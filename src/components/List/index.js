@@ -1,79 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ItemList from '../ItemList';
 import styles from './style.scss';
 
 class List extends Component {
-  handleSongChange = e => {
-    const { actions } = this.props;
-    const { setSongEdit } = actions;
-    const text = e.target.value;
-    setSongEdit(text);
-  };
-
-  handleSingerChange = e => {
-    const { actions } = this.props;
-    const { setSingerEdit } = actions;
-    const text = e.target.value;
-    setSingerEdit(text);
-  };
-
-  handleClickSave = () => {
-    const { actions, list, idEdit } = this.props;
-    const [el] = list.filter(item => item.id === idEdit);
-    if (el.song === '' && el.singer === '') {
-      actions.delItem(idEdit);
-    }
-    actions.editItem(0);
-  }
-
   render() {
     const { list, actions, idEdit } = this.props;
     const listItem = list.map(item => (
-      <div key={item.id} className={styles.listItem}>
-        {item.id === idEdit ? (
-          <div className={styles.listItem__name}>
-            <input
-              type="text"
-              className={styles.textEditing}
-              value={item.song}
-              onChange={this.handleSongChange}
-            />
-            <input
-              type="text"
-              className={styles.textEditing}
-              value={item.singer}
-              onChange={this.handleSingerChange}
-            />
-            <div
-              className={styles.btnSave}
-              onClick={this.handleClickSave}
-            >
-              &#128190;
-            </div>
-          </div>
-        ) : (
-          <div className={styles.listItem__name}>
-            <p className={styles.list_nameSong}>{item.song}</p>
-            <p className={styles.list_nameSinger}>{item.singer}</p>
-            <div
-              className={styles.btnDel}
-              onClick={() => {
-                actions.delItem(item.id);
-              }}
-            >
-              &#x2718;
-            </div>
-            <div
-              className={styles.btnEdit}
-              onClick={() => {
-                actions.editItem(item.id);
-              }}
-            >
-              &#x270e;
-            </div>
-          </div>
-        )}
-      </div>
+      <ItemList
+        key={item.id}
+        idEdit={idEdit}
+        itemList={item}
+        setSongEdit={actions.setSongEdit}
+        setSingerEdit={actions.setSingerEdit}
+        delItem={actions.delItem}
+        editItem={actions.editItem}
+      />
     ));
 
     return (
