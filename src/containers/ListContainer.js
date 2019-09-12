@@ -4,10 +4,10 @@ import {
   saveEdit,
 } from '../actions';
 import List from '../components/List';
-import { getVisibleList } from '../selectors';
+import { visibleListSelector } from '../selectors';
 
 const mapStateToProps = state => ({
-  list: getVisibleList(state),
+  list: visibleListSelector(state),
 });
 
 export default connect(

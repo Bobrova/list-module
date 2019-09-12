@@ -5,13 +5,18 @@ import {
   addItem,
 } from '../actions';
 import Forms from '../components/Forms';
-import { getCurrentId } from '../selectors';
+import {
+  currentIdSelector,
+  singerSelector,
+  songSelector,
+  listSelector,
+} from '../selectors';
 
 const mapStateToProps = state => ({
-  list: state.list,
-  song: state.form.song,
-  singer: state.form.singer,
-  currentId: getCurrentId(state),
+  list: listSelector(state),
+  singer: singerSelector(state),
+  song: songSelector(state),
+  currentId: currentIdSelector(state),
 });
 
 export default connect(
