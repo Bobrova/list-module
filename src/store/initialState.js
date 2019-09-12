@@ -39,10 +39,14 @@ export const initialState = {
       singer: 'Billy Talent',
     },
   ],
-  formValue: {
+  form: {
     song: '',
     singer: '',
   },
-  searchValue: '',
-  idEdit: 0,
+  search: '',
+  edit: {
+    song: '',
+    singer: '',
+    idEdit: 0,
+  } 
 };

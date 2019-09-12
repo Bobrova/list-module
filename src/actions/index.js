@@ -8,3 +8,4 @@ export const setSearch = text => ({ type: types.SET_SEARCH, text });
 export const editItem = idEdit => ({ type: types.EDIT_ITEM, idEdit });
 export const setSingerEdit = singer => ({ type: types.SET_SINGER_EDIT, singer });
 export const setSongEdit = song => ({ type: types.SET_SONG_EDIT, song });
+export const saveEdit = payload => ({ type: types.SAVE_EDIT, payload });

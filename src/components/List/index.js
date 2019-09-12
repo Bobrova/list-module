@@ -7,21 +7,27 @@ class List extends Component {
   render() {
     const {
       list,
+      song,
+      singer,
       setSingerEdit,
       setSongEdit,
       editItem,
       delItem,
       idEdit,
+      saveEdit,
     } = this.props;
     const listItem = list.map(item => (
       <ItemList
         key={item.id}
+        song={song}
+        singer={singer}
         idEdit={idEdit}
         itemList={item}
         setSongEdit={setSongEdit}
         setSingerEdit={setSingerEdit}
         delItem={delItem}
         editItem={editItem}
+        saveEdit={saveEdit}
       />
     ));
 
@@ -40,6 +46,9 @@ List.propTypes = {
   setSongEdit: PropTypes.func.isRequired,
   editItem: PropTypes.func.isRequired,
   delItem: PropTypes.func.isRequired,
+  singer: PropTypes.string.isRequired,
+  song: PropTypes.string.isRequired,
+  saveEdit: PropTypes.func.isRequired,
 };
 
 export default List;

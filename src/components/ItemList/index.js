@@ -18,12 +18,16 @@ class ItemList extends Component {
   handleClickSave = () => {
     const {
       editItem,
-      itemList,
+      song,
+      singer,
       idEdit,
       delItem,
+      saveEdit,
     } = this.props;
-    if (itemList.song === '' && itemList.singer === '') {
+    if (song === '' && singer === '') {
       delItem(idEdit);
+    } else {
+      saveEdit({ idEdit, song, singer });
     }
     editItem(0);
   }
@@ -34,12 +38,21 @@ class ItemList extends Component {
   };
 
   handleEditItem = () => {
-    const { editItem, itemList } = this.props;
+    const {
+      editItem,
+      itemList,
+      setSingerEdit,
+      setSongEdit,
+    } = this.props;
     editItem(itemList.id);
+    setSingerEdit(itemList.singer);
+    setSongEdit(itemList.song);
   };
 
   render() {
     const {
+      song,
+      singer,
       itemList,
       idEdit,
     } = this.props;
@@ -50,13 +63,13 @@ class ItemList extends Component {
             <input
               type="text"
               className={styles.textEditing}
-              value={itemList.song}
+              value={song}
               onChange={this.handleSongChange}
             />
             <input
               type="text"
               className={styles.textEditing}
-              value={itemList.singer}
+              value={singer}
               onChange={this.handleSingerChange}
             />
             <div
@@ -90,12 +103,15 @@ class ItemList extends Component {
 }
 
 ItemList.propTypes = {
+  song: PropTypes.string.isRequired,
+  singer: PropTypes.string.isRequired,
   itemList: PropTypes.object.isRequired,
   idEdit: PropTypes.number.isRequired,
   delItem: PropTypes.func.isRequired,
   editItem: PropTypes.func.isRequired,
   setSingerEdit: PropTypes.func.isRequired,
   setSongEdit: PropTypes.func.isRequired,
+  saveEdit: PropTypes.func.isRequired,
 };
 
 export default ItemList;

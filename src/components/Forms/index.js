@@ -21,6 +21,8 @@ class Forms extends Component {
       song,
       singer,
       addItem,
+      setSinger,
+      setSong,
     } = this.props;
     if (song !== '' && /\S/.test(song)) {
       if (singer !== '' && /\S/.test(singer)) {
@@ -29,6 +31,8 @@ class Forms extends Component {
           song: song.trim(),
           singer: singer.trim(),
         });
+        setSinger('');
+        setSong('');
       }
     }
   };

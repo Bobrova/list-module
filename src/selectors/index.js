@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const getSearchValue = (state) => state.searchValue;
+const getSearchValue = (state) => state.search;
 const getlist = (state) => state.list;
 
 export const getCurrentId = createSelector(
