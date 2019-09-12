@@ -34,6 +34,7 @@
       "jsx-a11y/accessible-emoji": "off",
       "react/prefer-stateless-function": "off",
       "import/no-cycle": "off",
-      "no-confusing-arrow": "off"
+      "no-confusing-arrow": "off",
+      "react/state-in-constructor": "off"
     }
 }

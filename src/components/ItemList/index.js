@@ -3,33 +3,36 @@ import PropTypes from 'prop-types';
 import styles from './style.scss';
 
 class ItemList extends Component {
+  state = {
+    idEdit: 0,
+    songEdit: '',
+    singerEdit: '',
+  };
+
   handleSongChange = e => {
-    const { setSongEdit } = this.props;
-    const text = e.target.value;
-    setSongEdit(text);
+    this.setState({ songEdit: e.target.value });
   };
 
   handleSingerChange = e => {
-    const { setSingerEdit } = this.props;
-    const text = e.target.value;
-    setSingerEdit(text);
+    this.setState({ singerEdit: e.target.value });
   };
 
   handleClickSave = () => {
     const {
-      editItem,
-      song,
-      singer,
-      idEdit,
       delItem,
       saveEdit,
     } = this.props;
-    if (song === '' && singer === '') {
+    const { idEdit, songEdit, singerEdit } = this.state;
+    if (songEdit === '' && singerEdit === '') {
       delItem(idEdit);
     } else {
-      saveEdit({ idEdit, song, singer });
+      saveEdit({ idEdit, song: songEdit, singer: singerEdit });
     }
-    editItem(0);
+    this.setState({
+      idEdit: 0,
+      songEdit: '',
+      singerEdit: '',
+    });
   }
 
   handleDelItem = () => {
@@ -39,23 +42,22 @@ class ItemList extends Component {
 
   handleEditItem = () => {
     const {
-      editItem,
       itemList,
-      setSingerEdit,
-      setSongEdit,
     } = this.props;
-    editItem(itemList.id);
-    setSingerEdit(itemList.singer);
-    setSongEdit(itemList.song);
+    this.setState({
+      idEdit: itemList.id,
+      songEdit: itemList.song,
+      singerEdit: itemList.singer,
+    });
   };
 
   render() {
     const {
-      song,
-      singer,
       itemList,
-      idEdit,
     } = this.props;
+
+    const { idEdit, songEdit, singerEdit } = this.state;
+
     return (
       <div key={itemList.id} className={styles.listItem}>
         {itemList.id === idEdit ? (
@@ -63,13 +65,13 @@ class ItemList extends Component {
             <input
               type="text"
               className={styles.textEditing}
-              value={song}
+              value={songEdit}
               onChange={this.handleSongChange}
             />
             <input
               type="text"
               className={styles.textEditing}
-              value={singer}
+              value={singerEdit}
               onChange={this.handleSingerChange}
             />
             <div
@@ -103,14 +105,8 @@ class ItemList extends Component {
 }
 
 ItemList.propTypes = {
-  song: PropTypes.string.isRequired,
-  singer: PropTypes.string.isRequired,
   itemList: PropTypes.object.isRequired,
-  idEdit: PropTypes.number.isRequired,
   delItem: PropTypes.func.isRequired,
-  editItem: PropTypes.func.isRequired,
-  setSingerEdit: PropTypes.func.isRequired,
-  setSongEdit: PropTypes.func.isRequired,
   saveEdit: PropTypes.func.isRequired,
 };
 
